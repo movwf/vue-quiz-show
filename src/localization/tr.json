@@ -1,0 +1,16 @@
+{
+  "general_questions": "Sorular",
+  "general_categories": "Kategoriler",
+  "general_teams": "Takımlar",
+  "question_area_plus_5_seconds": "+5 Saniye",
+  "question_area_show_question": "Soruyu Göster",
+  "question_area_start_timer": "Süreyi Başlat",
+  "question_area_show_answer": "Cevabı Göster",
+  "question_area_next_question": "Sıradaki Soru",
+  "question_area_show_results": "Sonuçları Göster",
+  "question_area_question_label": "Soru:",
+  "question_area_answer_label": "Cevap:",
+  "question_area_points_label": "Puan",
+  "question_area_nth_question_label": ". Soru",
+  "teams_risc_joker_propt_question": "Kaç puan feda edeceksin?"
+}

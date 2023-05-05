@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-display: auto;
+  unicode-range: U+000-5FF;
+  src: local('Roboto'), url('/fonts/Roboto/Roboto-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-display: auto;
+  unicode-range: U+000-5FF;
+  src: local('Lato'), url('/fonts/Lato/Lato-Bold.woff') format('woff');
+}
+
+.mainBorder {
+  @apply border-[2px] border-gray-50;
+}
+
+* {
+  font-family: 'Lato';
+}

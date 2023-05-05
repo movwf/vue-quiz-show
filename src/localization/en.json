@@ -1,0 +1,16 @@
+{
+  "general_questions": "Questions",
+  "general_categories": "Categories",
+  "general_teams": "Teams",
+  "question_area_plus_5_seconds": "+5 Seconds",
+  "question_area_show_question": "Show Question",
+  "question_area_start_timer": "Start Timer",
+  "question_area_show_answer": "Show Answer",
+  "question_area_next_question": "Next Question",
+  "question_area_show_results": "Show Results",
+  "question_area_question_label": "Question:",
+  "question_area_answer_label": "Answer:",
+  "question_area_points_label": "Points",
+  "question_area_nth_question_label": ". Question",
+  "teams_risc_joker_propt_question": "How much you want to sacrifice?"
+}
