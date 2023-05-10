@@ -98,7 +98,7 @@ const handleUpdateTeam = (teamId, operation) => {
 
 <template>
   <h1
-    class="w-full h-12 border-b-2 border-gray-50 flex items-center justify-center font-light text-xl uppercase"
+    class="w-full h-12 border-b-2 border-gray-200 text-white flex items-center justify-center font-light text-xl uppercase"
   >
     {{ t('general_teams') }}
   </h1>
@@ -106,7 +106,7 @@ const handleUpdateTeam = (teamId, operation) => {
     <div
       v-for="team in mappedTeams"
       :key="team.name"
-      class="w-full h-40 mt-4 border-b-2 border-gray-50 flex flex-col justify-center items-center"
+      class="w-full h-40 mt-4 border-b-[1px] border-gray-600 flex flex-col justify-center items-center"
     >
       <div class="flex flex-row justify-center align-center">
         <div id="jokersGroup" class="w-12 h-full flex flex-col justify-between">
@@ -195,7 +195,7 @@ const handleUpdateTeam = (teamId, operation) => {
         </div>
       </div>
 
-      <span class="text-lg break-words">{{ team.name }}</span>
+      <span class="text-lg break-words text-gray-100 py-1">{{ team.name }}</span>
       <span v-if="false">{{ team.points }} points </span>
     </div>
   </div>

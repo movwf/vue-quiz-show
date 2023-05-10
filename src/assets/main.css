@@ -19,7 +19,7 @@
 }
 
 .mainBorder {
-  @apply border-[2px] border-gray-50;
+  @apply border-t-2 border-gray-200;
 }
 
 * {

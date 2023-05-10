@@ -11,7 +11,7 @@ const orderedList = computed(() => {
 
 <template>
   <h1
-    class="w-full h-12 border-b-2 border-gray-50 flex items-center justify-center font-light text-xl uppercase"
+    class="w-full h-12 border-b-2 border-gray-200 text-white flex items-center justify-center font-light text-xl uppercase"
   >
     {{ t('general_categories') }}
   </h1>

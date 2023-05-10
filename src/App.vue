@@ -10,4 +10,8 @@ import {
   <RouterView />
 </template>
 
-<style scoped></style>
+<style scoped>
+ * {
+  @apply bg-gradient-to-r from-gray-800 via-green-500 to-gray-800;
+ }
+</style>

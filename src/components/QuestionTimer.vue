@@ -128,7 +128,7 @@ export default {
         ></path>
       </g>
     </svg>
-    <span class="base-timer__label h-full absolute text-2xl xl:text-5xl">{{
+    <span class="base-timer__label h-full absolute text-2xl xl:text-5xl text-white">{{
       formattedTimeLeft
     }}</span>
   </div>

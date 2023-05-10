@@ -4,16 +4,16 @@ const props = defineProps(['questions', 'currentQuestion'])
 
 const questionColor = (questionId) => {
   return props.questions.find((q) => q.id === questionId).answered
-    ? 'border-red-500'
+    ? 'bg-gray-900 text-white border-gray-600'
     : props.currentQuestion === questionId
-    ? 'bg-green-500 border-gray-50'
-    : 'border-gray-100'
+    ? 'bg-green-500 border-gray-200'
+    : 'border-black'
 }
 </script>
 
 <template>
   <span class="w-full flex justify-center my-2">
-    <h1 class="font-light text-xl uppercase">{{ t('general_questions') }}</h1>
+    <h1 class="font-light text-2xl uppercase text-white">{{ t('general_questions') }}</h1>
   </span>
   <div
     id="question-numbers"

@@ -12,7 +12,7 @@ const categoryColor = computed(() => {
 
 <template>
   <span
-    class="h-12 w-[75%] flex justify-center items-center font-bold rounded-xl mt-4"
+    class="h-12 w-[75%] flex justify-center items-center font-bold rounded-xl text-lg mt-4"
     :class="categoryColor"
   >
     {{ props.category.name }}

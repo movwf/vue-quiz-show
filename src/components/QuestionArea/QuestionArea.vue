@@ -51,7 +51,7 @@ const forwardQuestion = () => {
     class="h-full w-full flex flex-col justify-center items-center my-8 translate-y-[-20px]"
   >
     <div
-      class="min-h-[40%] w-[85%] max-w-[900px] p-12 rounded-3xl flex flex-col items-center justify-center border-2 bg-gray-100 text-5xl"
+      class="min-h-[40%] w-[85%] max-w-[900px] p-12 rounded-3xl flex flex-col items-center justify-center border-2 text-5xl bg-[#79C99E]"
     >
       <span v-if="!isQVisible && !isTimeUp">
         {{ currentQuestion.id
@@ -102,6 +102,6 @@ const forwardQuestion = () => {
 }
 
 button {
-  @apply w-36 h-20 text-2xl ml-4 rounded-xl;
+  @apply w-36 h-20 text-2xl ml-4 rounded-xl border-[1px] border-gray-700 hover:scale-[90%] ease-in-out duration-300;
 }
 </style>

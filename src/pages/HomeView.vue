@@ -1,5 +1,10 @@
 <script setup>
 import { onMounted, ref, computed, watch } from 'vue'
+import bg1 from '@/assets/bg.mp3'
+import bg2 from '@/assets/bg2.mp3'
+import bg3 from '@/assets/bg3.mp3'
+import bg4 from '@/assets/bg4.mp3'
+import Logo from '@/assets/logo.svg'
 import gapi from '@/services/googleSheets.js'
 import localSave from '@/services/localSave.js'
 import QuestionTimer from '../components/QuestionTimer.vue'
@@ -39,7 +44,14 @@ const setTimeUp = (state) => {
 }
 
 const startTimer = () => {
+  const music = new Audio([bg1, bg2, bg3, bg4][Math.floor(Math.random() * 5)])
+  music.volume = 0.1
+  music.play()
   questionTimer.value.startTimer()
+
+  setTimeout(() => {
+    music.pause()
+  }, questionTimer.value.timeLimit * 1000)
 }
 
 const showTimer = (timeInSeconds) => {
@@ -48,7 +60,9 @@ const showTimer = (timeInSeconds) => {
 }
 
 const addTime = (amount) => {
-  questionTimer.value.setTimeLimit(Number(questionTimer.value.timeLimit) + Number(amount))
+  questionTimer.value.setTimeLimit(
+    Number(questionTimer.value.timeLimit) + Number(amount)
+  )
 }
 
 const reloadTeams = () => {
@@ -149,21 +163,19 @@ onMounted(async () => {
 
 <template>
   <div class="h-screen w-screen">
-    <nav class="flex flex-row w-full h-[25%] border-t-2 border-gray-50">
+    <nav class="flex flex-row w-full h-[25%] border-t-2 border-gray-200">
       <div class="topBlock">
         <div class="h-full flex flex-row">
-          <QuestionTimer ref="questionTimer" 
-          :setTimeUp="setTimeUp"
-          />
+          <QuestionTimer ref="questionTimer" :setTimeUp="setTimeUp" />
         </div>
       </div>
       <div class="questionProgressBar">
-        <QuestionProgress
-          :questions="questions"
-          :currentQuestion="currentQuestion"
-        />
+        <QuestionProgress :questions="questions"
+          :currentQuestion="currentQuestion" />
       </div>
-      <div class="topBlock h-full flex justify-center items-center">Logo</div>
+      <div class="topBlock h-full w-full flex justify-center items-center">
+        <img class="w-[80%] h-[80%]" :src="Logo" />
+      </div>
     </nav>
     <main class="flex flex-row mainBorder w-full h-[75%]">
       <aside class="sidePanel">
@@ -173,13 +185,9 @@ onMounted(async () => {
       <div class="questionArea">
         <QuestionArea
           :currentQuestion="questions.find((q) => q.id === currentQuestion)"
-          :nextQuestion="nextQuestion"
-          :isShowEnded="isShowEnded"
-          :startTimer="startTimer"
-          :showTimer="showTimer"
-          :isTimeUp="isTimeUp"
-          :addTime="addTime"
-        />
+          :nextQuestion="nextQuestion" :isShowEnded="isShowEnded"
+          :startTimer="startTimer" :showTimer="showTimer" :isTimeUp="isTimeUp"
+          :addTime="addTime" />
       </div>
       <aside class="sidePanel">
         <TeamsPanel :teams="teams" :reloadTeams="reloadTeams" />
@@ -190,7 +198,7 @@ onMounted(async () => {
 
 <style scoped>
 .topBlock {
-  @apply w-1/5 h-full border-x-2 border-gray-50;
+  @apply w-1/5 h-full border-x-2 border-gray-200;
 }
 
 .questionProgressBar {
@@ -198,10 +206,10 @@ onMounted(async () => {
 }
 
 .questionArea {
-  @apply w-3/5 h-full border-b-2 border-gray-50 flex flex-col items-center;
+  @apply w-3/5 h-full border-b-2 border-gray-200 flex flex-col items-center;
 }
 
 .sidePanel {
-  @apply w-1/5 h-full border-x-2 border-b-2 border-gray-50 overflow-y-scroll scrollbar-hide whitespace-nowrap;
+  @apply w-1/5 h-full border-x-2 border-b-2 border-gray-200 overflow-y-scroll scrollbar-hide whitespace-nowrap;
 }
 </style>
